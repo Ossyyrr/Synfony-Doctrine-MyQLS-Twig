@@ -1,0 +1,13 @@
+.imagenHome{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./../images/1.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1{
+    color: white;
+    font-size: 68px;
+    font-family: 'hello';
+    text-shadow:5px 5px 5px black, 5px 5px 10px rgb(14, 14, 14), 5px 5px 20px rgb(47, 47, 47);
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Dashboad!{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+<link rel="stylesheet" href="{{asset('css/tarjeta.css')}}">
+<link rel="stylesheet" href="{{asset('css/imagenHome.css')}}">
+{% endblock %}
+{% block body %}
+{{parent()}}
+
+<section class="imagenHome centrar">
+    <h1>Echa un vistazo a <br> Los lugares más bonitos del mundo</h1>
+</section>
+
+
+
+{# total items count #}
+<div class="count">
+    <h3 class="totalPosts">Total Posts: {{ posts.getTotalItemCount }}</h3>
+</div>
+
+
+<script>
+    function setLikes(id) {
+        console.log(id)
+        location.href = "/like/" + id;
+    }
+</script>
+
+<section class="imagenesHome">
+    {% for post in posts %}
+    <div class="colocarLikes">
+        <a href="/registrar-comentarios/{{post.id}}">
+            <div class="tarjeta ">
+                <div class="imagen centrar">
+                    <img src="{{asset('uploads/photos/')}}/{{post.foto}}" alt="{{ post.titulo }}">
+
+                </div>
+                <div class="info">
+                    <h2>{{ post.titulo }}</h2>
+                    <p>{{ post.contenido }}</p>
+                    <p class="firma">{{post.nombre}}, {{ post.fecha_publicacion | date('Y-m-d') }}</p>
+                </div>
+            </div>
+            <p class="likeNumber">{{post.likes}}</p>
+        </a>
+        <img onclick="setLikes('{{post.id}}')" title="{{post.likes}}" class="like" src="{{asset('images/heart2.png')}}"
+            alt="Likes: {{post.likes}}" title="{{post.likes}}">
+    </div>
+    {% endfor %}
+</section>
+
+
+{# display navigation #}
+<div class="navigation">
+    {{ knp_pagination_render(posts) }}
+</div>
+
+
+
+{% endblock %}

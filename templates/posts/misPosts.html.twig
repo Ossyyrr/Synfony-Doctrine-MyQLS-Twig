@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{parent()}} - Mis Posts!{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+<link rel="stylesheet" href="{{asset('css/tarjeta.css')}}">
+{% endblock %}
+{% block body %} {{parent()}}
+
+<h2 class="margenTop">Mis Posts</h2>
+
+<script>
+    function borrar(id) {
+        console.log(id)
+        location.href = "/delete-posts/" + id;
+
+    }
+</script>
+
+<section class="imagenesHome">
+    {% for post in posts %}
+    <div class="relat">
+        <a href="/registrar-comentarios/{{post.id}}" class="tarjeta ">
+            <div class="imagen centrar">
+                <img src="{{asset('uploads/photos/')}}/{{post.foto}}" alt="{{ post.titulo }}">
+            </div>
+            <div class="info">
+                <h2>{{ post.titulo }}</h2>
+                <p>{{ post.contenido }}</p>
+            </div>
+            <!-- <img class="like" src="{{asset('images/heart2.png')}}" alt="Likes: {{post.likes}}" title="{{post.likes}}"> -->
+        </a>
+            <button class="borrar" onclick="borrar('{{post.id}}')">X</button>
+        </div>
+
+    {% endfor %}
+</section>
+
+
+{% endblock %}

@@ -2,11 +2,30 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Patricia Manzanero {% endblock %}</title>
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{asset('css/base.css')}}">
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+
+        <nav>
+            <a href="{{path('dashboard')}}">Home</a>
+            <ul>
+               <li> <a href="{{path('registrarPosts')}}">Crear posts</a></li>
+               <li> <a href="{{path('misPosts')}}">Mis posts</a></li>
+               <li> <a href="{{path('registro')}}">Registrarme!</a></li>
+               <li> <a href="{{path('app_login')}}">Login!</a></li>
+            </ul>
+        </nav>
+        
+        
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{asset('js/base.js')}}"></script>
+        {% endblock %}
     </body>
 </html>

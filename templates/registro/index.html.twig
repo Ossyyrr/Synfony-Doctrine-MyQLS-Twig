@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{parent()}} - Registro!{% endblock %}
+
+{% block body %}
+{{parent()}}
+
+{% for message in app.flashes('exito') %}
+    <div class='alert alert-succeess'>
+    {{message}}
+    {% endfor %}
+
+    <h2 class="margenTop">Registro!</h2>
+    
+{{form(formulario)}}
+
+
+{% endblock %}

@@ -1,0 +1,180 @@
+/*FONDO, imputs, buttons y NAVBAR*/
+
+@font-face{
+    src: url(./../fonts/Hello.otf);
+    font-family: 'hello';
+}
+
+/* Ancho */::-webkit-scrollbar {width: 4px;height: 4px;}
+/* Pista */::-webkit-scrollbar-track {background: white; }
+/* Barrita */::-webkit-scrollbar-thumb {background: goldenrod; }
+/* Barrita hover */ ::-webkit-scrollbar-thumb:hover {background: #bbb;width: 7px;height: 7px; }
+/* Barrita active */ ::-webkit-scrollbar-thumb:active {background: goldenrod;width: 7px;height: 7px; }
+
+/*FUENTES
+font-family: 'Pacifico', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Raleway', sans-serif;
+*/
+
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.margenTop{
+    margin-top: 70px;
+    font-size: 40px;
+}
+body{
+   /* background-image: url('./../images/fondo2.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(32,124,229,1) 100%);*/
+    background-image: url(./../images/fondo2.png);
+    background-size: cover;
+    
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#207ce5', GradientType=1 );
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin:0px;
+    padding: 0px;
+    width: calc(100% - 7px);
+}
+
+nav{
+    font-family: 'Pacifico', cursive;
+    display: flex;
+    width: 100vw;
+    color: darkslategray;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.322);
+    text-shadow: 1px 1px 2px aliceblue;
+}
+
+ul{
+    align-items: center;
+    display: flex;
+    margin: 0px;
+}
+li{
+    list-style: none;
+}
+nav a{
+    padding: 0px 30px;
+    text-decoration: none;
+    line-height: 50px;
+    display: inline-block;
+    color: rgb(17, 16, 1);
+
+    }
+form{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.198);
+    box-shadow: 2px 2px 2px rgba(170, 169, 169, 0.267);
+    margin-bottom: 50px;
+}
+input, textarea{
+    background-color: #fff;
+    margin: 20px 0 20px 0;
+    width: 250px;
+    height: 25px;
+    border: 1px solid rgb(149, 206, 253);
+}
+textarea{
+    height: 80px;
+}
+label{
+    display: block;
+}
+.remember{
+    display: flex;
+    align-items: center;
+}
+.remember input{
+    max-width: 25px;
+    margin: 15px 25px 15px 0;
+}
+button{
+    background-color:rgb(149, 206, 253);
+    border: none;
+    width: 250px;
+    height: 25px;
+    margin: 20px 0px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 5px 5px 10px rgb(78, 77, 77);
+}
+button:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+    box-shadow: 0px 0px 0px grey;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.pagination{
+    background-color: rgba(55, 104, 194, 0.644);
+    padding: 10px 20px;
+    font-size: 24px;
+    border: 1px solid rgb(93, 177, 246);
+    margin-bottom:45px;
+    border-radius: 20px;
+    border: 3px solid goldenrod;
+}
+.pagination .current{
+    text-shadow: 1px 1px 2px goldenrod, 1px 1px 2px goldenrod, 2px 2px 2px rgb(3, 3, 3);
+    font-size: 28px;
+    color: white;
+}
+.pagination a{
+    color: rgb(255, 255, 255);
+    margin: 20px;
+
+}
+.pagination a:hover{
+    color:goldenrod;
+}
+
+img{
+    filter: contrast(120%);
+}
+.totalPosts{
+    font-family: 'Pacifico', cursive;
+
+}
+.like{
+    z-index: 10;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+}
+.likeNumber{
+    z-index: 11;
+    position: absolute;
+    bottom: -20px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black ;
+}
+p label input div{
+    font-family: 'Raleway', sans-serif;
+
+}

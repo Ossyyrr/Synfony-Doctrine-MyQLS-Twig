@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{parent()}} - Crear Post!{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+{% endblock %}
+{% block body %}  {{parent()}} 
+
+<h2 class="margenTop">Crear Post</h2>
+
+{{form(form)}}
+
+{% endblock %}

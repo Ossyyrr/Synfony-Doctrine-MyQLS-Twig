@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - Comentar Post!{% endblock %}
+{% block stylesheets %}
+{{parent()}}
+<link rel="stylesheet" href="{{asset('css/post.css')}}">
+{% endblock %}
+{% block body %}
+{{parent()}}
+
+
+
+<section>
+    <h2 class="sobreFoto">{{ post.titulo }}</h2>
+    <img src="{{asset('uploads/photos/')}}/{{post.foto}}" alt="{{ post.titulo }}">
+</section>
+<section class="relativa">
+
+    <h2 class="sobreFotoRB">Post de {{post.user.nombre}}</h2>
+    <div class="contenido centrar">
+        <p>{{ post.contenido }}</p>
+    </div>
+    <p class="likeNumber">{{post.likes}}</p>
+    <img class="like" src="{{asset('images/heart2.png')}}" alt="Likes: {{post.likes}}" title="{{post.likes}}">
+    </a>
+</section>
+<h2>Comentarios</h2>
+<section >
+    {% for comentario in comentarios %}
+    <div class="comentarioPost">
+        <p>{{comentario.comentario}}</p>
+        <p>Fdo: {{comentario.user.nombre}}</p>
+    </div>
+    {% endfor %}
+
+</section>
+
+
+<h2>Insertar Comentario</h2>
+
+
+{{form(form)}}
+
+{% endblock %}
